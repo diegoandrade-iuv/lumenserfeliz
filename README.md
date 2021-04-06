@@ -7,9 +7,9 @@ O trabalho está dividido nas seguintes etapas:
       - Linhas os Valores por mês 
       - Barras e linhas Qnt de Doadores e doação per capta
       - Pizza representação do total (fixos, membros e avulsos)
-      - Box and wisker variações
+      - Box and wisker variações (OPCIONAL)
     - 2 Especiais
-      - Casas e ocupação X tempo
+      - Casas Fortaleza e ocupação X tempo
       - Novos cadastros X Estado X Tempo  
 
 * Agregar os dados - OK
