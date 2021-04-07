@@ -8,8 +8,9 @@ O trabalho está dividido nas seguintes etapas:
         (https://dc-js.github.io/dc.js/examples/composite.html - linhas.png)
       - Barras e linhas Qnt de Doadores e doação per capta
         (https://dc-js.github.io/dc.js/examples/composite-bar-line.html)
-      - Pizza representação do total (fixos, membros e avulsos)
+      - Pizza ou Barras empilhadas representação do total (fixos, membros e avulsos)
         (https://dc-js.github.io/dc.js/examples/pie-external-labels.html ou https://dc-js.github.io/dc.js/examples/pie.html)
+        (https://dc-js.github.io/dc.js/examples/stacked-bar.html)
       - Box and wisker variações (OPCIONAL)        
     - 2 Especiais
       - Casas Fortaleza e ocupação X tempo
