@@ -19,5 +19,21 @@ O trabalho está dividido nas seguintes etapas:
         (https://dataficacao.wordpress.com/2017/02/21/criando-mapa-brasil-r/)
 * Agregar os dados - OK
 * Realizar visualizações prévias via tableu - OK
-* Realizar as visualizações no observable
+* Realizar as visualizações no observable 
+  - em todos com barra melhorar espaçamento para as pontas
+  - Valores por mês
+    - corrigir eixo Y
+    - corrigir tooltip
+  - Stacked Bar
+    - Corrigir cores
+    - Corrigir tooltip
+    - adicionar legenda
+  - Composite bar-line
+    - corrigir barras
+    - corrigir cores
+    - corrigir ordem
+    - corrigir tooltip
+  - Mapa 1
+  - Mapa 2
+  -Filtro interatívo - slider
 * Migrar para o github pages
