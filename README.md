@@ -16,7 +16,7 @@ O trabalho está dividido nas seguintes etapas:
       - Casas Fortaleza e ocupação X tempo
         (exemplos teremoto)
       - Novos cadastros X Estado X Tempo  
-        (https://dataficacao.wordpress.com/2017/02/21/criando-mapa-brasil-r/)
+        (https://github.com/fititnt/gis-dataset-brasil)
 * Agregar os dados - OK
 * Realizar visualizações prévias via tableu - OK
 * Realizar as visualizações no observable 
@@ -34,6 +34,10 @@ O trabalho está dividido nas seguintes etapas:
     - corrigir ordem
     - corrigir tooltip
   - Mapa 1
+    
   - Mapa 2
-  -Filtro interatívo - slider
+  - Filtro interatívo - slider
+      - Criar um array com data inicio e fim
+        - Toda vez que houver uma alteração de filtro todos olham para esse array.
+  - Apresentação PDF
 * Migrar para o github pages
