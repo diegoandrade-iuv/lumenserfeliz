@@ -1,6 +1,6 @@
 # Visualizações Lumen Ser Feliz
 
-https://observablehq.com/@diegoandrade-iuv/visualizacoes-lumen-ser-feliz@845
+https://observablehq.com/@mathiascb/visualizacoes-lumen-ser-feliz@846
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,14 +14,14 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@4
-npm install https://api.observablehq.com/d/151c432399dc315e.tgz?v=3
+npm install https://api.observablehq.com/@mathiascb/visualizacoes-lumen-ser-feliz.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
 
 ~~~js
 import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@diegoandrade-iuv/visualizacoes-lumen-ser-feliz";
+import define from "@mathiascb/visualizacoes-lumen-ser-feliz";
 ~~~
 
 To log the value of the cell named “foo”:

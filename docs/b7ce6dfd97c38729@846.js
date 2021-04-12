@@ -1,5 +1,6 @@
-// https://observablehq.com/@diegoandrade-iuv/visualizacoes-lumen-ser-feliz@845
-import define1 from "./b2bbebd2f186ed03@1080.js";
+// https://observablehq.com/@mathiascb/visualizacoes-lumen-ser-feliz@846
+import define1 from "./e93997d5089d7165@2303.js";
+import define2 from "./b2bbebd2f186ed03@1080.js";
 
 export default function define(runtime, observer) {
   const main = runtime.module();
@@ -151,20 +152,22 @@ md`# Novos Cadastros por UF`
 	path = d3.geoPath().projection(projection);
   svg.append("g")
       .attr("class", "counties")
-    .selectAll("path")
-      .data(topojson.feature(br, br.objects.estados).features)
-    .enter().append("path")       
-      .attr("fill", d => colorScale(Math.log(ufMap.get(d.id))))
-      .attr("d", path)
+      .selectAll("path")
+        .data(topojson.feature(br, br.objects.estados).features)
+      .enter().append("path")       
+        .attr("fill", d => colorScale(Math.log(ufMap.get(d.id))))
+        .attr("d", path)
+        .attr("id", d => d.id)
   .on("mouseover", function(d){
+          console.log(d.target.id)
           d3.select(this)
             .style("cursor", "pointer")
             .attr("stroke-width", 2)
             .attr("stroke", "#DB9D15");
     
           const rect = this.getBoundingClientRect();
-          showTooltip(d.id, rect.x, rect.y);
-      })
+          showTooltip(d.target.id, rect.x, rect.y);
+      }, false)
       .on("mouseout", function(d){
           d3.select(this)
             .style("cursor", "default")
@@ -188,6 +191,17 @@ md`# Casas Lumen e Acolhidos `
   main.variable(observer("view")).define("view", ["md","container"], function(md,container){return(
 md`${container('mapid', 'mapa')}`
 )});
+  main.variable(observer("viewof a3")).define("viewof a3", ["slider"], function(slider){return(
+slider({
+  min: 1, 
+  max: 12, 
+  step: 1, 
+  value: 1, 
+  title: "Mês", 
+  description: ""
+})
+)});
+  main.variable(observer("a3")).define("a3", ["Generators", "viewof a3"], (G, _) => G.input(_));
   main.variable(observer("yScale")).define("yScale", ["d3","TotalGroup"], function(d3,TotalGroup){return(
 d3.scaleLinear().domain([0,TotalGroup.top(1)[0].value]).nice()
 )});
@@ -399,28 +413,17 @@ crossfilter(cadastros)
   return mapInstance
 }
 );
-  main.variable(observer("viewof range")).define("viewof range", ["rangeSlider"], function(rangeSlider){return(
-rangeSlider({
-  min: 1,
-  max: 12,
-  value: [3,11],
-  precision: 0,  // how many decimal places
-  title: 'Mês',
-  
-})
-)});
-  main.variable(observer("range")).define("range", ["Generators", "viewof range"], (G, _) => G.input(_));
   main.variable(observer("circleScale")).define("circleScale", ["d3"], function(d3){return(
 d3
   .scaleLinear()
   .domain([0, 34])
   .range([0, 5000])
 )});
-  main.variable(observer("circles")).define("circles", ["circlesLayer","dataset2","L","circleScale","dataset3"], function(circlesLayer,dataset2,L,circleScale,dataset3)
+  main.variable(observer("circles")).define("circles", ["circlesLayer","dataset2","L","circleScale","dataset3","a3"], function(circlesLayer,dataset2,L,circleScale,dataset3,a3)
 {
   circlesLayer.clearLayers()
   dataset2.forEach( function(d) {
-    let circle = L.circle([d.lat, d.lon], circleScale(dataset3[11][d.Casa]), {
+    let circle = L.circle([d.lat, d.lon], circleScale(dataset3[a3-1][d.Casa]), {
       color: '#fd8d3c',
       weight: 2,
       fillColor: '#fecc5c',
@@ -613,7 +616,9 @@ html`Esta célula contém os estilos da visualização.
 	</style>`
 )});
   const child1 = runtime.module(define1);
-  main.import("rangeSlider", child1);
+  main.import("slider", child1);
+  const child2 = runtime.module(define2);
+  main.import("rangeSlider", child2);
   main.variable(observer("topojson")).define("topojson", ["require"], function(require){return(
 require("topojson-client@3")
 )});

@@ -1,11 +1,11 @@
 {
-  "name": "@diegoandrade-iuv/visualizacoes-lumen-ser-feliz",
-  "main": "151c432399dc315e@845.js",
-  "version": "845.0.0",
-  "homepage": "https://observablehq.com/@diegoandrade-iuv/visualizacoes-lumen-ser-feliz",
+  "name": "@mathiascb/visualizacoes-lumen-ser-feliz",
+  "main": "b7ce6dfd97c38729@846.js",
+  "version": "846.0.0",
+  "homepage": "https://observablehq.com/@mathiascb/visualizacoes-lumen-ser-feliz",
   "author": {
-    "name": "diegoandrade-iuv",
-    "url": "https://observablehq.com/@diegoandrade-iuv"
+    "name": "Mathias Batista",
+    "url": "https://observablehq.com/@mathiascb"
   },
   "type": "module",
   "peerDependencies": {
