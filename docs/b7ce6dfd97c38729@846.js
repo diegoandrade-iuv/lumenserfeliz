@@ -159,7 +159,7 @@ md`# Novos Cadastros por UF`
         .attr("d", path)
         .attr("id", d => d.id)
   .on("mouseover", function(d){
-          console.log(d.target.id)
+          //console.log(d.target.id)
           d3.select(this)
             .style("cursor", "pointer")
             .attr("stroke-width", 2)
@@ -274,25 +274,11 @@ mesDim.group().reduceSum(d=> d.pontual_pc)
   main.variable(observer("pcMembrosGroup")).define("pcMembrosGroup", ["mesDim"], function(mesDim){return(
 mesDim.group().reduceSum(d=> d.membros_pc)
 )});
-  main.variable(observer("tooltip")).define("tooltip", ["d3"], function(d3)
-{
-   d3.select("#tooltip").remove();
-   let node = d3.select("body")
-                .append("div")
-                .attr("id","tooltip")
-                .attr("class", "hidden")
-                .append("p")
-                .html("<b><span id='nomeEstado'></span></b> </br>")
-                .append("p")
-                .html("Quantidade de Cadastros: <span id='taxa'></span>")
-   return node;
-}
-);
-  main.variable(observer("showTooltip")).define("showTooltip", ["d3","ufMap","ConverterEstados","width"], function(d3,ufMap,ConverterEstados,width){return(
-function showTooltip(county_id, x, y) {
-  console.log(county_id)
+
+main.variable(observer("showTooltip")).define("showTooltip", ["d3","ufMap","ConverterEstados","width"], function(d3,ufMap,ConverterEstados,width){return(
+function showTooltip(county_id, x, y) {  
   const offset = 10;
-  const t = d3.select("#tooltip");
+  const t = d3.select("#tooltip"); 
   t.select("#taxa").text(ufMap.get(county_id)==null?0:ufMap.get(county_id));
   t.select("#nomeEstado").text(ConverterEstados(county_id));
   t.classed("hidden", false);
@@ -430,7 +416,7 @@ d3
       fillOpacity: 0.5
     });
   
-  circle.bindPopup("Casa: "+d.Casa)
+  circle.bindPopup("Casa: "+d.Casa +"<br>Mes: "+a3+"<br>Acolhidos:"+dataset3[a3-1][d.Casa] )
   circlesLayer.addLayer(circle) })
 }
 );

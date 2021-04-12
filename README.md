@@ -22,7 +22,7 @@ O trabalho está dividido nas seguintes etapas:
 * Realizar as visualizações no observable 
   - em todos com barra melhorar espaçamento para as pontas
   - Valores por mês
-    - corrigir eixo Y
+    - corrigir eixo Y - NOK
     - corrigir tooltip
   - Stacked Bar
     - Corrigir cores
