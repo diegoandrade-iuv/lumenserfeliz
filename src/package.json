@@ -1,0 +1,14 @@
+{
+  "name": "@diegoandrade-iuv/visualizacoes-lumen-ser-feliz",
+  "main": "151c432399dc315e@845.js",
+  "version": "845.0.0",
+  "homepage": "https://observablehq.com/@diegoandrade-iuv/visualizacoes-lumen-ser-feliz",
+  "author": {
+    "name": "diegoandrade-iuv",
+    "url": "https://observablehq.com/@diegoandrade-iuv"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
